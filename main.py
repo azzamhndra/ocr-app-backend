@@ -6,13 +6,15 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from sqlalchemy.exc import IntegrityError
 from flask_socketio import SocketIO
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ocruser:passwordkuaman123@localhost:3306/ocr_database'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ocruser1:ocrapp123@localhost:3306/ocr_database'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)

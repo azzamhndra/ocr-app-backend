@@ -1,4 +1,6 @@
-flask
-flask_sqlalchemy
-flask_socketio
+Flask
+Flask-SQLAlchemy
+Flask-CORS
+Flask-SocketIO
 pymysql
+gunicorn
